@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Prenota un tavolo - da Nonna Giusy</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            background: linear-gradient(150deg, #c8873a 0%, #a3581e 40%, #7a3a10 100%);
+            min-height: 100vh;
+            padding: 48px 20px 60px;
+        }
+
+        .card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 252, 245, 0.97);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+        }
+
+        .hero {
+            background: linear-gradient(160deg, #b56c2a 0%, #7a3a10 100%);
+            padding: 44px 40px 50px;
+            text-align: center;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; left: 0; right: 0;
+            height: 38px;
+            background: rgba(255, 252, 245, 0.97);
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+        .hero h1 {
+            font-size: 38px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .hero p {
+            font-style: italic;
+            color: rgba(255, 230, 180, 0.9);
+            font-size: 16px;
+        }
+
+        .body {
+            padding: 40px 52px 52px;
+        }
+
+        .ornament {
+            text-align: center;
+            color: #ddab46;
+            font-size: 20px;
+            letter-spacing: 10px;
+            margin-bottom: 36px;
+        }
+
+        .campo {
+            margin-bottom: 22px;
+        }
+
+        .campo label {
+            display: block;
+            font-size: 13px;
+            font-weight: bold;
+            color: #7a3a10;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+        }
+
+        .campo input,
+        .campo select,
+        .campo textarea {
+            width: 100%;
+            padding: 12px 16px;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            color: #4a2c0a;
+            background: #fdf6ec;
+            border: 1px solid #e8d5b0;
+            border-radius: 10px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .campo input:focus,
+        .campo select:focus,
+        .campo textarea:focus {
+            border-color: #b56c2a;
+        }
+
+        .campo textarea {
+            height: 110px;
+            resize: vertical;
+        }
+
+        .riga-doppia {
+            display: flex;
+            gap: 20px;
+        }
+        .riga-doppia .campo {
+            flex: 1;
+        }
+
+        .btn-invia {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            font-family: Georgia, serif;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            background: linear-gradient(135deg, #ddab46 0%, #b56c2a 100%);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 18px rgba(181,108,42,0.38);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .btn-invia:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(181,108,42,0.35);
+        }
+
+        .messaggio-ok {
+            display: none;
+            text-align: center;
+            background: #f0faf4;
+            border: 1px solid #a8d5b5;
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 24px;
+            color: #2e7d52;
+            font-size: 16px;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+        .divider-line { flex: 1; height: 1px; background: #e8d5b0; }
+        .divider-icon { color: #c8873a; font-size: 18px; }
+
+        .footer-btns {
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        .btn-torna {
+            display: inline-block;
+            padding: 13px 30px;
+            font-family: Georgia, serif;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 50px;
+            color: #b56c2a;
+            border: 2px solid #b56c2a;
+            transition: background 0.15s;
+        }
+        .btn-torna:hover {
+            background: rgba(181,108,42,0.08);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+
+        <div class="hero">
+            <h1>Prenota un tavolo</h1>
+            <p>Ti aspettiamo a braccia aperte</p>
+        </div>
+
+        <div class="body">
+            <div class="ornament">✦ ✦ ✦</div>
+
+            <div class="divider">
+                <div class="divider-line"></div>
+                <span class="divider-icon">🗓</span>
+                <div class="divider-line"></div>
+            </div>
+
+            <div class="riga-doppia">
+                <div class="campo">
+                    <label>Nome e cognome</label>
+                    <input type="text" placeholder="Mario Rossi">
+                </div>
+                <div class="campo">
+                    <label>Telefono</label>
+                    <input type="tel" placeholder="+39 000 000 0000">
+                </div>
+            </div>
+
+            <div class="riga-doppia">
+                <div class="campo">
+                    <label>Data</label>
+                    <input type="date">
+                </div>
+                <div class="campo">
+                    <label>Ora</label>
+                    <select>
+                        <option value="">-- Seleziona --</option>
+                        <optgroup label="Pranzo">
+                            <option>12:00</option>
+                            <option>12:30</option>
+                            <option>13:00</option>
+                            <option>13:30</option>
+                            <option>14:00</option>
+                            <option>14:30</option>
+                        </optgroup>
+                        <optgroup label="Cena">
+                            <option>19:00</option>
+                            <option>19:30</option>
+                            <option>20:00</option>
+                            <option>20:30</option>
+                            <option>21:00</option>
+                            <option>21:30</option>
+                            <option>22:00</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label>Numero di persone</label>
+                <select>
+                    <option value="">-- Seleziona --</option>
+                    <option>1 persona</option>
+                    <option>2 persone</option>
+                    <option>3 persone</option>
+                    <option>4 persone</option>
+                    <option>5 persone</option>
+                    <option>6 persone</option>
+                    <option>7 persone</option>
+                    <option>8 persone</option>
+                    <option>Più di 8 (gruppo)</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>Note (allergie, occasioni speciali...)</label>
+                <textarea placeholder="Es: un ospite è celiaco, è il compleanno della nonna..."></textarea>
+            </div>
+
+            <button class="btn-invia" onclick="invia()">Invia prenotazione</button>
+
+            <div class="messaggio-ok" id="msg-ok">
+                🎉 Prenotazione ricevuta! Ti contatteremo presto per confermare il tavolo.
+            </div>
+
+            <div class="footer-btns">
+                <a href="index.html" class="btn-torna">← Torna alla home</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function invia() {
+            document.getElementById('msg-ok').style.display = 'block';
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
