@@ -1,124 +1,281 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-    <title>Menu - daGINO</title>
+    <title>Menù - da Nonna Giusy</title>
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #ddab46, #b56c2a);
+            font-family: Georgia, serif;
+            background: linear-gradient(150deg, #c8873a 0%, #a3581e 40%, #7a3a10 100%);
+            min-height: 100vh;
+            padding: 48px 20px 60px;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 100px auto;
-            background: rgba(255, 255, 255, 0.788);
-            padding: 40px;
-            border-radius: 15px;
+        .card {
+            max-width: 820px;
+            margin: 0 auto;
+            background: rgba(255, 252, 245, 0.97);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+        }
+
+        .hero {
+            background: linear-gradient(160deg, #b56c2a 0%, #7a3a10 100%);
+            padding: 44px 40px 50px;
             text-align: center;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -1px; left: 0; right: 0;
+            height: 38px;
+            background: rgba(255, 252, 245, 0.97);
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+        .hero h1 {
+            font-size: 42px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+        .hero p {
+            font-style: italic;
+            color: rgba(255, 230, 180, 0.9);
+            font-size: 16px;
         }
 
-        .riquadro {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 20px;
-            font-size: 30px;
-            color: white;
-            background: #b56c2a;
-            border-radius: 50px;
+        .body {
+            padding: 40px 52px 52px;
+        }
+
+        .ornament {
+            text-align: center;
+            color: #ddab46;
+            font-size: 20px;
+            letter-spacing: 10px;
+            margin-bottom: 36px;
+        }
+
+        .sezione {
+            margin-bottom: 40px;
+        }
+
+        .sezione h2 {
+            font-size: 26px;
+            color: #5a2f0a;
+            border-bottom: 2px solid #e8d5b0;
+            padding-bottom: 8px;
+            margin-bottom: 18px;
         }
 
         .piatto {
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px dotted #333;
-            padding: 5px 0;
+            align-items: baseline;
+            padding: 10px 0;
+            border-bottom: 1px dashed #e8d5b0;
+        }
+        .piatto:last-child {
+            border-bottom: none;
         }
 
-        .prezzo {
-            justify-content: right;
-        }
-
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 25px;
+        .piatto-nome {
             font-size: 16px;
-            background: #ddab46;
-            border-radius: 25px;
+            color: #4a2c0a;
+            font-weight: bold;
+        }
+        .piatto-desc {
+            font-size: 13px;
+            color: #9a6840;
+            font-style: italic;
+            margin-top: 2px;
+        }
+        .piatto-sinistra {
+            flex: 1;
+        }
+        .piatto-prezzo {
+            font-size: 16px;
+            color: #b56c2a;
+            font-weight: bold;
+            margin-left: 20px;
+            white-space: nowrap;
         }
 
-        .btn:hover {
-            background: #b56c2a;
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 32px;
+        }
+        .divider-line { flex: 1; height: 1px; background: #e8d5b0; }
+        .divider-icon { color: #c8873a; font-size: 18px; }
+
+        .btn-torna {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 13px 30px;
+            font-family: Georgia, serif;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 50px;
+            color: #b56c2a;
+            border: 2px solid #b56c2a;
+            transition: background 0.15s;
+        }
+        .btn-torna:hover {
+            background: rgba(181,108,42,0.08);
+        }
+
+        .footer-btns {
+            text-align: center;
+            margin-top: 36px;
         }
     </style>
 </head>
 <body>
+    <div class="card">
 
-<div class="container">
+        <div class="hero">
+            <h1>Il nostro Menù</h1>
+            <p>Tutto fatto con amore, come una volta</p>
+        </div>
 
-    <img src="logo.jpg" class="riquadro">
+        <div class="body">
+            <div class="ornament">✦ ✦ ✦</div>
 
-    <h1>Il Nostro Menu</h1>
+            <div class="sezione">
+                <h2>🥗 Antipasti</h2>
+                <div class="piatto">
+                    <div class="piatto-sinistra">
+                        <div class="piatto-nome">Bruschette al pomodoro</div>
+                        <div class="piatto-desc">Pane casereccio tostato, pomodoro fresco e basilico</div>
+                    </div>
+                    <div class="piatto-prezzo">€ 5,00</div>
+                </div>
+                <div class="piatto">
+                    <div class="piatto-sinistra">
+                        <div class="piatto-nome">Affettati misti della casa</div>
+                        <div class="piatto-desc">Salumi nostrani con giardiniera e pane</div>
+                    </div>
+                    <div class="piatto-prezzo">€ 9,00</div>
+                </div>
+                <div class="piatto">
+                    <div class="piatto-sinistra">
+                        <div class="piatto-nome">Verdure grigliate</div>
+                        <div class="piatto-desc">Zucchine, melanzane e peperoni con olio e erbe aromatiche</div>
+                    </div>
+                    <div class="piatto-prezzo">€ 7,00</div>
+                </div>
+            </div>
 
-    <h2>Antipasti</h2>
-    <div class="piatto">
-        <span>Tagliere di salumi</span>
-        <span>€10</span>
-    </div>
-    <div class="piatto">
-        <span>Patatine fritte</span>
-        <span>€4</span>
-    </div>
-    <div class="piatto">
-        <span>Patate al forno</span>
-        <span>€4</span>
-    </div>
-    <div class="piatto">
-        <span>Frittura mista</span>
-        <span>€6</span>
-    </div>
+            <div class="divider">
+                <div class="divider-line"></div>
+                <span class="divider-icon">🍝</span>
+                <div class="divider-line"></div>
+            </div>
 
-    <h2>Primi</h2>
-    <div class="piatto">
-        <span>Cotoletta impanata</span>
-        <span>€10</span>
-    </div><div class="piatto">
-        <span>Gnocchi al sugo</span>
-        <span>€9</span>
-    </div>
-    <div class="piatto">
-        <span>Pasta al pesto / al sugo / bianca</span>
-        <span>€10</span>
-    </div>
-    <div class="piatto">
-        <span>Polenta e salamella</span>
-        <span>€14</span>
-    </div>
+            <div class="sezione">
+                <h2>🍝 Primi</h2>
+                <div class="piatto">
+                    <div class="piatto-sinistra">
+                        <div class="piatto-nome">Tagliatelle al ragù della nonna</div>
+                        <div class="piatto-desc">Pasta fresca fatta in casa con ragù di carne lento</div>
+                    </div>
+                    <div class="piatto-prezzo">€ 13,00</div>
+                </div>
+                <div class="piatto">
+                    <div class="piatto-sinistra">
+                        <div class="piatto-nome">Risotto alla milanese</div>
+                        <div class="piatto-desc">Con zafferano DOP e midollo di manzo</div>
+                    </div>
+                    <div class="piatto-prezzo">€ 14,00</div>
+                </div>
+                <div class="piatto">
+                    <div class="piatto-sinistra">
+                        <div class="piatto-nome">Minestrone di stagione</div>
+                        <div class="piatto-desc">Verdure fresche del mercato con crostini</div>
+                    </div>
+                    <div class="piatto-prezzo">€ 9,00</div>
+                </div>
+                <div class="piatto">
+                    <div class="piatto-sinistra">
+                        <div class="piatto-nome">Gnocchi al pomodoro e basilico</div>
+                        <div class="piatto-desc">Gnocchi di patate fatti a mano con salsa fresca</div>
+                    </div>
+                    <div class="piatto-prezzo">€ 11,00</div>
+                </div>
+            </div>
 
-    <h2>Secondi</h2>
-    <div class="piatto">
-        <span>Bruschette miste</span>
-        <span>€6</span>
-    </div>
-    <div class="piatto">
-        <span>Bruschette miste</span>
-        <span>€6</span>
-    </div>
+            <div class="divider">
+                <div class="divider-line"></div>
+                <span class="divider-icon">🥩</span>
+                <div class="divider-line"></div>
+            </div>
 
-    <h2>Dolci</h2>
-    <div class="piatto">
-        <span>Bruschette miste</span>
-        <span>€6</span>
+            <div class="sezione">
+                <h2>🥩 Secondi</h2>
+                <div class="piatto">
+                    <div class="piatto-sinistra">
+                        <div class="piatto-nome">Ossobuco alla milanese</div>
+                        <div class="piatto-desc">Con gremolata e risotto giallo</div>
+                    </div>
+                    <div class="piatto-prezzo">€ 18,00</div>
+                </div>
+                <div class="piatto">
+                    <div class="piatto-sinistra">
+                        <div class="piatto-nome">Pollo arrosto della domenica</div>
+                        <div class="piatto-desc">Con patate al forno e rosmarino</div>
+                    </div>
+                    <div class="piatto-prezzo">€ 14,00</div>
+                </div>
+                <div class="piatto">
+                    <div class="piatto-sinistra">
+                        <div class="piatto-nome">Cotoletta alla milanese</div>
+                        <div class="piatto-desc">Vitello impanato con insalata di stagione</div>
+                    </div>
+                    <div class="piatto-prezzo">€ 16,00</div>
+                </div>
+            </div>
+
+            <div class="divider">
+                <div class="divider-line"></div>
+                <span class="divider-icon">🍮</span>
+                <div class="divider-line"></div>
+            </div>
+
+            <div class="sezione">
+                <h2>🍮 Dolci</h2>
+                <div class="piatto">
+                    <div class="piatto-sinistra">
+                        <div class="piatto-nome">Tiramisù della Giusy</div>
+                        <div class="piatto-desc">La ricetta originale di nonna, non si tocca</div>
+                    </div>
+                    <div class="piatto-prezzo">€ 6,00</div>
+                </div>
+                <div class="piatto">
+                    <div class="piatto-sinistra">
+                        <div class="piatto-nome">Panna cotta ai frutti di bosco</div>
+                        <div class="piatto-desc">Con coulis di lamponi freschi</div>
+                    </div>
+                    <div class="piatto-prezzo">€ 5,50</div>
+                </div>
+                <div class="piatto">
+                    <div class="piatto-sinistra">
+                        <div class="piatto-nome">Torta della casa</div>
+                        <div class="piatto-desc">Varia ogni giorno, chiedi al cameriere</div>
+                    </div>
+                    <div class="piatto-prezzo">€ 5,00</div>
+                </div>
+            </div>
+
+            <div class="footer-btns">
+                <a href="index.html" class="btn-torna">← Torna alla home</a>
+            </div>
+
+        </div>
     </div>
-    <div class="piatto">
-        <span>Bruschette miste</span>
-        <span>€6</span>
-    </div>
-
-    <a href="index.html" class="btn"><img src="home.png" height="25" width="25"></a>
-
-</div>
-
 </body>
 </html>
